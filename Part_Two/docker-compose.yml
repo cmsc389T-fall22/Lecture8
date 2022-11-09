@@ -24,21 +24,11 @@ services:
       - file-writer-volume:/home/myuser/app
     restart: unless-stopped
 
-  static-webpage:
-    build:
-      context: StaticWebpage 
-      dockerfile: Dockerfile
-    ports:
-      - "8080:80"
-    image: static-webpage
-    container_name: static-webpage
-    restart: unless-stopped
-
 volumes:
   file-writer-volume:
     driver: local
     driver_opts:
       type: none
-      device: /absolute/path/to/FileWriter/
+      device: /Users/sagarsaxena/Desktop/Programming/UMD/cmsc38XT/fall22/demos/Lecture8/Part_Two/FileWriter
       o: bind
 
